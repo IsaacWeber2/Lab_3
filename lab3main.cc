@@ -25,10 +25,12 @@ int main() {
     someNums.addItem(53);
     someNums.addItem(29);
     someNums.addItem(22);
+    someNums.frontView();
+    return 0;
     someNums.addItem(15);
     
     //check the list after adding a number divisible by 5
-    someNums.frontView();
+    // someNums.frontView();
     cout << endl;
 
     //add more numbers
