@@ -89,3 +89,27 @@ List::~List() {
         delete rmPtr;
     }
 }
+
+List::List(Node *original)
+{
+    Node* cursor1;
+    head = tail = nullptr;
+
+    cursor1 = original;
+
+
+    while (cursor1 != nullptr)
+    {
+        if (head == nullptr) {
+            head = tail = new Node(cursor1 -> getData());
+            nodeCount++;
+        }
+        else {
+            tail->setNext(new Node(cursor1 -> getData()));
+            tail = tail->getNext();
+            nodeCount++;
+        }
+    
+        cursor1 = cursor1 -> getNext();
+    }
+}
