@@ -41,6 +41,9 @@ class List {
     void addItem(int item);
     void frontView() const;
     void rearView() const;
+
+    List(Node *original);
+
     ~List();
     int size() const { return nodeCount; }
     // List(const List& other);
