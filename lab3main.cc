@@ -52,7 +52,7 @@ int main() {
     cout << endl;
 
     // This part will be uncommented once you have written the copy constructor
-    /*
+    
     someNums.rearView();
     cout << endl;
 
@@ -70,6 +70,6 @@ int main() {
         cout << "The copy constructor is not working\n";
     }
 
-    */
+    
     return 0;
 }
