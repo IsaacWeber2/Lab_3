@@ -21,16 +21,18 @@ int main() {
 
     List someNums;
     //let's add some numbers to the list
+    
     someNums.addItem(34);
     someNums.addItem(53);
     someNums.addItem(29);
     someNums.addItem(22);
-    someNums.frontView();
-    return 0;
+
     someNums.addItem(15);
     
+    
     //check the list after adding a number divisible by 5
-    // someNums.frontView();
+    someNums.frontView();
+    
     cout << endl;
 
     //add more numbers
@@ -45,6 +47,8 @@ int main() {
     // Once you have written the rear-view this should let you
     // see the list frontwards and backwards.
     someNums.frontView();
+    cout << endl;
+    someNums.rearView();
     cout << endl;
 
     // This part will be uncommented once you have written the copy constructor
