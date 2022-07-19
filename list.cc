@@ -25,14 +25,37 @@ void List::frontView() const {
 }
 
 // The student is required to write the implementation of this function
-void List::rearView() const {}
+void List::rearView() const {
+    Node* cursor = head;
+    int i, g;
+    i =0;
+    g = 0;
+    while (cursor != nullptr)
+    {
+        cursor = cursor -> getNext();
+        i++;
+    }
+    cursor = head;
+    for(g = 1; g < i; g++)
+    {
+        cursor = cursor -> getNext();
+    }
+    
+    while (cursor != head)
+    {
+        cout << cursor->getData() << "  ";
+        cursor = cursor -> getPrevious();
+    }
+    cout << cursor->getData() << "  ";
+    
+}
 
 void List::addItem(int item) {
     if (head == nullptr) {
         head = tail = new Node(item);
         nodeCount++;
     } else if (item % 5 == 0 && nodeCount > 3) {
-        int i = 0;
+        int i = 1;
         Node* cursor = head;
         while (i < nodeCount / 2) {
             cursor = cursor->getNext();
@@ -40,9 +63,15 @@ void List::addItem(int item) {
         }
 
 		Node *temp = new Node(item);
-		temp->setNext(cursor->getPrevious());
-		temp->setPrevious(cursor->getNext());
-		cursor->getPrevious()->setNext(temp);
+		temp->setNext(cursor->getNext());
+		temp->setPrevious(cursor);
+		cursor->setNext(temp);
+
+        cursor = cursor -> getNext();
+        cursor = cursor -> getNext();
+        
+        cursor ->setPrevious(temp);
+        
         
         nodeCount++;
     } else {
